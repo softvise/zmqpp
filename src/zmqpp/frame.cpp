@@ -81,7 +81,6 @@ frame::frame(frame&& other)
 
 frame& frame::operator=(frame&& other)
 {
-	zmq_msg_init( &_msg );
 	zmq_msg_move( &_msg, &other._msg );
 	std::swap( _sent, other._sent );
 
